@@ -55,13 +55,14 @@ class mmeConfigGen():
 		useLoopBackForS10 = False
 		if (self.mme_s10_name == self.mme_s11_name) and (self.mme_s10_IP == self.mme_s11_IP):
 			print ('Using the same interface name and the same IP address for S11 and S10 is not allowed.')
-			print ('Starting a virtual interface on loopback for S10')
-			useLoopBackForS10 = True
-			mmeFile.write('\n')
-			mmeFile.write('# Using the same interface name and the same IP address for S11 and S10 is not allowed.\n')
-			mmeFile.write('# Starting a virtual interface on loopback for S10\n')
-			mmeFile.write('ifconfig lo:s10 127.0.0.10 up\n')
-			mmeFile.write('echo "ifconfig lo:s10 127.0.0.10 up --> OK"\n')
+		# We create a virtual interface called lo:s10
+		print ('Starting a virtual interface on loopback for S10')
+		useLoopBackForS10 = True
+		mmeFile.write('\n')
+		mmeFile.write('# Using the same interface name and the same IP address for S11 and S10 is not allowed.\n')
+		mmeFile.write('# Starting a virtual interface on loopback for S10\n')
+		mmeFile.write('ifconfig lo:s10 127.0.0.10 up\n')
+		mmeFile.write('echo "ifconfig lo:s10 127.0.0.10 up --> OK"\n')
 
 		mmeFile.write('\n')
 		mmeFile.write('INSTANCE=1\n')
