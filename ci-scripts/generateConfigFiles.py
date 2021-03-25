@@ -38,7 +38,7 @@ class mmeConfigGen():
 		self.mcc = '208'
 		self.mnc = '93'
 		self.tac_list = "600 601 602"
-		self.realm = 'openairinterface.org'
+		self.realm = 'openair4G.eur'
 		self.fromDockerFile = False
 		self.envForEntrypoint = False
 
